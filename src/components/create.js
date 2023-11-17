@@ -18,17 +18,14 @@ function Create() {
             title:title,
             cover:cover,
             author:author
-        }
+        };
 
-        axios.post('http://localhost:4000/api/books')
+        axios.post('http://localhost:4000/api/book',book)
         .then()
         .catch();
 
-
-
-
     }
-    // some comment
+    
     return (
         <div>
             <h2>Hello from create Component!</h2>

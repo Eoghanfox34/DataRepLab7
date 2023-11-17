@@ -8,10 +8,11 @@ function Read() {
 
   useEffect(
     ()=>{
+        
         axios.get('http://localhost:4000/api/books')
         .then(
             (response)=>{
-                setData(response.data.books)
+                setData(response.data)
             }
         )
         .catch(
