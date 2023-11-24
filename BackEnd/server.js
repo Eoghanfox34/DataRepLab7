@@ -38,8 +38,18 @@ const bookSchema = new mongoose.Schema({
 
 const bookModel = mongoose.model('my_books', bookSchema);
 
+
+app.put('/api/books/:id', async(req, res)=>{
+
+
+  console.log("update: "+req.params.id);
+
+  let book = await bookModel.findByIdAndUpdate(req.params.id, req.body, {new:true});
+  res.send(book);
+})
+
 //Receive and log data sent to the /api/book route
-app.post('/api/book', (req,res)=>{
+app.post('/api/books', (req,res)=>{
     console.log(req.body);
 
     bookModel.create({
